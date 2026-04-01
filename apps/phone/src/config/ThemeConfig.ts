@@ -3,30 +3,57 @@ import { ThemeOptions } from '@mui/material';
 // Configure all of the phone's default themes here.
 export const PhoneThemes: Record<string, ThemeOptions> = {
   'taso-dark': {
+    shape: {
+      borderRadius: 0,
+    },
+    typography: {
+      fontFamily: "'Geist Variable', 'Segoe UI', 'Roboto', sans-serif",
+      h4: {
+        fontWeight: 700,
+      },
+      h5: {
+        fontWeight: 700,
+      },
+      button: {
+        fontWeight: 600,
+        letterSpacing: 0.4,
+        textTransform: 'none',
+      },
+    },
     components: {
       MuiDivider: {
         styleOverrides: {
           root: {
-            borderColor: 'rgba(255, 255, 255, 0.12)',
+            borderColor: '#2c3445',
           },
         },
       },
     },
     palette: {
       mode: 'dark',
+      background: {
+        default: '#0f1116',
+        paper: '#1a1e28',
+      },
       primary: {
-        main: '#a6d4fa',
+        main: '#00a2ed',
+      },
+      secondary: {
+        main: '#0093d9',
       },
       text: {
-        primary: 'rgba(255, 255, 255, 0.9)',
-        secondary: 'rgba(200, 200, 200, 0.9)',
-        disabled: 'rgba(200, 200, 200, 0.5)',
+        primary: '#f5f7fa',
+        secondary: '#a7b0c2',
+        disabled: '#6d778a',
       },
     },
   },
   'default-light': {
+    shape: {
+      borderRadius: 0,
+    },
     typography: {
-      fontFamily: "'SegoeUI', 'Roboto', 'Arial', sans-serif",
+      fontFamily: "'Geist Variable', 'Segoe UI', 'Roboto', sans-serif",
     },
     palette: {
       mode: 'light',

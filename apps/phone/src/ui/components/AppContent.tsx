@@ -33,11 +33,14 @@ export const AppContent: React.FC<AppContentTypes & BoxProps> = ({
 
   return (
     <div
-      className="flex flex-col flex-1 bg-neutral-100 dark:bg-neutral-900"
+      className="flex flex-col flex-1 bg-[#0f1116] text-[#f5f7fa]"
       style={backdrop ? { overflow: 'hidden' } : { overflow: 'auto' }}
     >
       <Backdrop className={classes.backdrop} open={backdrop || false} onClick={onClickBackdrop} />
-      <div className={classNames('flex-auto w-full grow', props.className)} style={paperStyle}>
+      <div
+        className={classNames('flex-auto w-full grow border-t border-[#2c3445]', props.className)}
+        style={paperStyle}
+      >
         {!disableSuspenseHandler ? (
           <React.Suspense fallback={<LoadingSpinner />}>{children}</React.Suspense>
         ) : (

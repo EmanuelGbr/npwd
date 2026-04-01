@@ -34,13 +34,14 @@ import {cn} from "@utils/css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.default,
-    height: '30px',
+    backgroundColor: '#11151e',
+    borderBottom: '1px solid #2c3445',
+    height: '38px',
     width: '100%',
     color: theme.palette.text.primary,
     zIndex: 99,
-    paddingLeft: '15px',
-    paddingRight: '15px',
+    paddingLeft: '12px',
+    paddingRight: '12px',
     position: 'relative',
     '&:hover': {
       cursor: 'pointer',
@@ -51,19 +52,22 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     position: 'relative',
-    lineHeight: '30px',
+    lineHeight: '38px',
     color: theme.palette.text.primary,
+    fontWeight: 700,
+    letterSpacing: '0.05em',
   },
   icon: {
     padding: '4px',
     color: theme.palette.text.primary,
   },
   drawer: {
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: '#151b27',
     width: '100%',
     position: 'absolute',
-    top: '30px',
+    top: '38px',
     zIndex: 98,
+    borderBottom: '1px solid #2c3445',
   },
   closeNotifBtn: {
     position: 'absolute',
@@ -157,12 +161,12 @@ export const NotificationBar = () => {
             </Typography>
           </Grid>
         )}
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end gap-1 text-[#a7b0c2]">
           <div>
-            <SignalMedium />
+            <SignalMedium size={16} />
           </div>
-          <div className="mt-1.5 text-green-300">
-            <BatteryFull />
+          <div className="text-[#00a2ed]">
+            <BatteryFull size={16} />
           </div>
         </div>
       </div>
