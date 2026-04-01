@@ -24,6 +24,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "dev:game": "turbo run dev:game",
+    "preview:nui": "pnpm --filter @npwd/nui preview",
+    "build:nui-preview": "pnpm --filter @npwd/keyos build && pnpm --filter @npwd/nui build",
     "prepare": "husky install",
     "format": "pretty-quick",
     "format:staged": "pretty-quick --staged",

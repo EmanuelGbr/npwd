@@ -44,6 +44,16 @@ _NPWD_ uses React + TypeScript to form the NUI front end and uses TypeScript (V8
 scripts. You can find more technical information regarding the development of this project on our docs
 page [here](https://projecterror.dev/docs/npwd/dev/dev_bootstrap).
 
+### Browser Preview (NUI Demo)
+
+To preview only the phone interface in a browser:
+
+1. Build shared UI + phone bundle:
+   - `pnpm run build:nui-preview`
+2. Start the preview server:
+   - `pnpm run preview:nui`
+3. Open `http://localhost:4173`
+
 ## Feature Request & Issue Reporting
 
 Please open an issue/enhancement on our [Github Repo](https://github.com/project-error/npwd/issues/new/choose). This is the best way for us to track what needs to be resolved or improved upon.
