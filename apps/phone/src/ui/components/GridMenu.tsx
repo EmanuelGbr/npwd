@@ -10,17 +10,19 @@ interface GridMenuProps {
   xs?: GridSize;
 }
 
+const LARGE_TILES = new Set(['MESSAGES', 'TWITTER', 'MARKETPLACE', 'DARKCHAT']);
+
 export const GridMenu: React.FC<GridMenuProps> = ({ items, Component = AppIcon, xs }) => {
   return (
-    <Grid container alignItems="center" direction="row">
+    <Grid container alignItems="stretch" direction="row" spacing={1}>
       {items &&
         items.length &&
         items.map((item) => (
           <Fragment key={item.id}>
             {!item.isDisabled && (
-              <Grid item xs={xs} key={item.id}>
-                <Box textAlign="center">
-                  <Link to={item.path}>
+              <Grid item xs={LARGE_TILES.has(item.id) ? 6 : xs || 3} key={item.id}>
+                <Box>
+                  <Link to={item.path} style={{ display: 'block' }}>
                     <Component {...item} />
                   </Link>
                 </Box>

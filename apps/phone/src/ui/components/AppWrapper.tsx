@@ -18,7 +18,7 @@ export const AppWrapper: React.FC<AppWrapperTypes> = ({
         display: 'flex',
         position: 'relative',
         flexDirection: 'column',
-        minHeight: '720px',
+        minHeight: '100%',
         ...style,
       }}
     >

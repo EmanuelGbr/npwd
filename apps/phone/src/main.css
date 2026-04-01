@@ -4,14 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --metro-bg: #0f1116;
+  --metro-surface: #1a1e28;
+  --metro-surface-alt: #202633;
+  --metro-border: #2c3445;
+  --metro-text: #f5f7fa;
+  --metro-text-muted: #a7b0c2;
+  --metro-accent: #00a2ed;
+}
+
 body {
   font-family: 'Geist Variable', sans-serif;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+  color: var(--metro-text);
 }
 
 code {
@@ -22,5 +34,14 @@ a,
 a:visited,
 a:hover,
 a:active {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
 }

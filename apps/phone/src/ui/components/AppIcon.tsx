@@ -2,43 +2,46 @@ import React from 'react';
 import { darken, Theme } from '@mui/material/styles';
 import makeStyles from '@mui/styles/makeStyles';
 import { green } from '@mui/material/colors';
-import { Badge, Button, Zoom } from '@mui/material';
+import { Badge } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { INotificationIcon } from '@os/notifications/providers/NotificationsProvider';
-import { Tooltip } from './Tooltip';
 
 const useStyles = makeStyles<Theme, { color: string; backgroundColor: string }>((theme) => ({
   root: {
-    padding: 0,
-    background: 'transparent',
-    marginTop: theme.spacing(3),
-  },
-  avatar: {
-    '&:hover': {
-      background: ({ backgroundColor }) => {
-        return `linear-gradient(45deg, ${darken(backgroundColor, 0.25)} 10%, ${backgroundColor} 90%)`;
-      },
-    },
-    background: ({ backgroundColor }) => {
-      return `linear-gradient(45deg, ${darken(backgroundColor, 0.2)} 20%, ${backgroundColor} 90%)`;
-    },
+    width: '100%',
+    minHeight: 84,
+    border: 0,
+    cursor: 'pointer',
+    background: ({ backgroundColor }) => `linear-gradient(160deg, ${darken(backgroundColor, 0.2)} 0%, ${backgroundColor} 100%)`,
     color: ({ color }) => color,
-    boxShadow: theme.shadows[2],
+    boxShadow: 'none',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 18,
-    width: theme.spacing(8),
-    height: theme.spacing(8),
-    fontSize: theme.typography.h4.fontSize,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    borderRadius: 0,
+    padding: theme.spacing(1.2),
+    textAlign: 'left',
+    transition: 'transform 120ms ease, filter 120ms ease',
+    '&:hover': {
+      transform: 'translateY(-1px)',
+      filter: 'brightness(1.07)',
+    },
+    '&:active': {
+      transform: 'scale(0.985)',
+    },
   },
   icon: {
-    fontSize: theme.typography.h4.fontSize,
-    width: theme.spacing(8),
-    height: theme.spacing(8),
+    fontSize: '1.9rem',
+    width: '1.9rem',
+    height: '1.9rem',
   },
-  tooltip: {
-    fontSize: 12,
+  label: {
+    fontSize: '0.7rem',
+    fontWeight: 700,
+    letterSpacing: '0.05em',
+    lineHeight: 1.15,
+    color: 'rgba(245,247,250,0.95)',
   },
 }));
 
@@ -46,7 +49,7 @@ export interface AppIconProps {
   id: string;
   nameLocale: string;
   Icon: React.ElementType;
-  icon: React.ElementType;
+  icon: React.ReactNode;
   backgroundColor: string;
   color: string;
   notification: INotificationIcon;
@@ -68,18 +71,19 @@ export const AppIcon: React.FC<AppIconProps> = ({
   });
 
   return (
-    <button className={classes.root}>
+    <button className={classes.root} type="button">
       <Badge
         color="error"
         badgeContent={notification?.badge}
-        invisible={!notification || notification.badge < 2}
+        invisible={!notification || notification.badge < 1}
       >
         {Icon ? (
           <Icon className={classes.icon} fontSize="large" />
         ) : (
-          <div className={classes.avatar}>{icon || t(nameLocale)}</div>
+          <div className={classes.icon}>{icon || t(nameLocale)}</div>
         )}
       </Badge>
+      <div className={classes.label}>{t(nameLocale)}</div>
     </button>
   );
 };

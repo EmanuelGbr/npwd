@@ -84,7 +84,7 @@ const Phone: React.FC<PhoneProps> = ({ notiRefCB }) => {
   const { modal: callModal } = useCallModal();
 
   return (
-    <div>
+    <div className="h-full">
       <TopLevelErrorComponent>
         <WindowSnackbar />
         <PhoneWrapper>

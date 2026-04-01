@@ -9,25 +9,14 @@ export const HomeApp: React.FC = () => {
   const { apps } = useApps();
   const externalApps = useExternalApps();
   return (
-    <AppWrapper>
-      <Box component="div" mt={6} px={1}>
-        {apps && <GridMenu xs={3} items={[...apps, ...externalApps]} />}
+    <AppWrapper style={{ background: 'transparent', minHeight: 0 }}>
+      <Box component="div" px={2.5} pt={3} pb={1}>
+        <div className="text-xs uppercase tracking-[0.25em] text-neutral-400 mb-2">NPWD OS</div>
+        <h1 className="text-5xl font-bold tracking-tight text-neutral-50 leading-none">Start</h1>
       </Box>
-
-      {/*<div className="absolute bottom-5 left-8 right-8">
-        <div className="h-20 w-full rounded-md bg-gray-200/30 backdrop-blur">
-          {apps &&
-            apps.slice(0, 4).map((app) => (
-              <div className="float-left h-full w-1/4" key={app.id}>
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-md bg-gray-200/50 backdrop-blur">
-                    {app.icon}
-                  </div>
-                </div>
-              </div>
-            ))}
-        </div>
-      </div>*/}
+      <Box component="div" px={1.5} pb={2} className="overflow-y-auto">
+        {apps && <GridMenu xs={6} items={[...apps, ...externalApps]} />}
+      </Box>
     </AppWrapper>
   );
 };
