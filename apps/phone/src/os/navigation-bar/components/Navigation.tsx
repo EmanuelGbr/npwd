@@ -18,16 +18,28 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <div className="bg-neutral-100 dark:bg-neutral-900 w-full h-14 px-12">
-      <div className="flex justify-between items-center h-full">
-        <button onClick={handleGoToMenu}>
-          <LayoutGrid className="text-neutral-400 hover:dark:text-neutral-100 h-6 w-6 hover:text-neutral-900 " />
+    <div className="w-full h-14 px-3 border-t border-[#2c3445] bg-[#161b24]">
+      <div className="grid grid-cols-3 gap-2 h-full items-center">
+        <button
+          type="button"
+          onClick={handleGoToMenu}
+          className="h-9 border border-[#2c3445] bg-[#202633] text-[#f5f7fa] flex items-center justify-center"
+        >
+          <LayoutGrid className="h-5 w-5" />
         </button>
-        <button onClick={closePhone}>
-          <Circle className="text-neutral-400 hover:dark:text-neutral-100 h-6 w-6 hover:text-neutral-900 " />
+        <button
+          type="button"
+          onClick={closePhone}
+          className="h-9 border border-[#2c3445] bg-[#202633] text-[#f5f7fa] flex items-center justify-center"
+        >
+          <Circle className="h-5 w-5" />
         </button>
-        <button onClick={handleGoBackInHistory}>
-          <ChevronLeft className="text-neutral-400 hover:dark:text-neutral-100 hover:text-neutral-900 h-6 w-6" />
+        <button
+          type="button"
+          onClick={handleGoBackInHistory}
+          className="h-9 border border-[#2c3445] bg-[#202633] text-[#f5f7fa] flex items-center justify-center"
+        >
+          <ChevronLeft className="h-5 w-5" />
         </button>
       </div>
     </div>

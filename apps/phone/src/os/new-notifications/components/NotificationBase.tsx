@@ -38,30 +38,28 @@ const NotificationBase = forwardRef<HTMLDivElement, NotificationBaseProps>((prop
         console.warn('App does not have a notification icon');
     }
 
-    console.log("app bg", app.backgroundColor)
-
     return (
         <SnackbarContent
             onClick={handleNotisClick}
             ref={ref}
             style={{minWidth: '370px'}}
-            className="bg-neutral-50 dark:bg-neutral-900 py-3.5 px-4 flex rounded-md shadow-md border-2 border-neutral-200 dark:border-neutral-800"
+            className="bg-[#161c26] py-3 px-3 flex border border-[#2c3445]"
         >
-            <div className="flex items-center text-neutral-900 dark:text-neutral-50 w-full mb-2">
+            <div className="flex items-center text-neutral-50 w-full mb-2">
                 <div
-                    className={cn("p-2 flex items-center justify-center rounded-full")}
+                    className={cn("p-2 flex items-center justify-center")}
                     style={{backgroundColor: app.backgroundColor}}
                 >
                     {app.NotificationIcon && <app.NotificationIcon fontSize="inherit"/>}
                 </div>
-                <div className="text-neutral-900 dark:text-neutral-50 font-semibold pl-1 grow text-sm">
+                <div className="text-neutral-50 font-semibold pl-2 grow text-xs tracking-[0.08em] uppercase">
                     {t(app.nameLocale)}
                 </div>
                 <div>
-                    <p className="text-neutral-900 dark:text-neutral-50 text-sm">{secondaryTitle}</p>
+                    <p className="text-[#a7b0c2] text-xs">{secondaryTitle}</p>
                 </div>
             </div>
-            <div className="text-neutral-900 dark:text-neutral-50 text-base overflow-hidden line-clamp-2">
+            <div className="text-neutral-100 text-sm overflow-hidden line-clamp-2">
                 <p>{message}</p>
             </div>
         </SnackbarContent>
